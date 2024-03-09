@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Project Name: Personal Portfolio Website
+Youtube: https://youtube.com/@devRasen
+Copyright: ©MdRasen -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Website | Prathamesh</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header section -->
+      <section id="header">
+        <div class="header-top">
+          <div class="logo">
+            <a class="logo-text" href="#"><span>PSB</span> - Portfolio</a>
+          </div>
+          <div class="nav-menu">
+            <ul id="sidemenu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#service">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+          </div>
+        </div>
+        <div class="header-bottom">
+          <div class="bottom-left">
+            <h1 class="name"><span class="my-name">Prathamesh Satish Bhoite</span></h1>
+            <h3 class="profession">Freelance Web Developer</h3>
+            <p class="short-desc">
+              
+            </p>
+            <a href="assets/Resume - Web - Prathamesh Bhoite.pdf" target="_blank" class="btn-cv" download
+              >Download Resume</a
+            >
+          </div>
+          <div class="bottom-right">
+            <a href="https://www.facebook.com/leiste15" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/leiste15" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/EverOnward15" target="_blank"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </section>
+      <!-- About section -->
+      <section id="about">
+        <div class="about-left">
+          <img src="assets/user-sideimg.jpeg" alt="user-sideimg" />
+        </div>
+        <div class="about-right">
+          <div class="section-title">
+            <h2 class="sub-title">About Me</h2>
+          </div>
+          <p class="desc">
+            I work remotely from Pune, India. I'm proficient with several popular web development frameworks such as React and WordPress. I can make responsive websites using vanilla Javascript or frameworks like Bootstrap. I can also do backend work. I have a Bachelor's Degree in Computer Applications.  
+            <br>
+          </p>
+          <div class="about-list">
+            <ul >
+              <li>I'm open to flexible, sporadic, or part-time work arrangements.</li>
+              <li>I'm committed, reliable, and do quality work.</li>
+              <li>I learn quickly and I'm good at solving problems.</li>
+            </ul>
+          </div>
+          <br>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="openTab('skills')">
+              Skills
+            </p>
+            <p class="tab-links" onclick="openTab('experience')">Computer Languages</p>
+            <!-- <p class="tab-links" onclick="openTab('education')">Spoken Languages</p> -->
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li>
+                Front-end development<br />
+              </li>
+              <li>Back-end development</li>
+              <li>Web marketing</li>
+              <li>Writing and research</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li>
+                HTML/CSS/JS
+              </li>
+              <li>
+                Python-Django
+              </li>
+              <li>
+                C++, C
+              </li>
+              <li>
+                PHP<br />
+              </li>
+              <li>
+                {Insert any language here} :)<br />
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="tab-contents" id="education">
+            <ul>
+              <li>
+                <span>English</span>
+              </li>
+              <li>
+                <span>2019-2023</span><br />
+              </li>
+              <li>
+                <span>2016-2018</span><br />HSC from Dhaka Imperial College
+              </li>
+            </ul>
+          </div> -->
+        </div>
+      </section>
+      <!-- Service section -->
+      <section id="service">
+        <div class="section-title">
+          <h2 class="sub-title">Hire Me For</h2>
+        </div>
+        <div class="services">
+          <div>
+            <i class="fa-brands fa-battle-net"></i>
+            <h2>Front-End Development</h2>
+            <p>
+              I'm proficient with several popular front-end tools, libraries, and frameworks like React, Tailwind, Bootstrap, and Vue. I can make responsive websites and dynamic UIs.  
+            </p>
+          </div>
+          <div>
+            <i class="fa-solid  fa-laptop"></i>
+            <h2>Back-End Development</h2>
+            <p>
+              I'm familiar with back-end methodologies, tools, and frameworks like Supabase, Python-Django, and WordPress. I can work with REST, CRUD, and more.
+            </p>
+          </div>
+          <div>
+            <i class="fa-solid fa-globe"></i>
+            <h2>Web Marketing</h2>
+            <p>
+              I can assist with web marketing through content creation, email marketing, social media management, copywriting, SEO, and more.
+            </p>
+          </div>
+          <div>
+            <i class="fa-brands fa-pix"></i>
+            <h2>Basic Web Design</h2>
+            <p>
+              I can design functional website layouts from scratch. I know my way around Figma and Photoshop. 
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio section -->
+      <section id="portfolio">
+        <div class="section-title">
+          <h2 class="sub-title">My Portfolio</h2>
+          <h3 class="title">Some Example Projects</h3>
+          <div class="project-list">
+            <div class="project">
+              <img src="assets/fbrs.png" alt="project1" />
+              <div class="layer">
+                <h3>Social Media App</h3>
+                <p>
+                  A simple app heavily inspired by FB. <br>
+                  - Next.js, Tailwind, <br>- Supabase, Vercel, OAuth <br>
+                  - SaSS, Mobile Responsive
+                </p>
+                <a href="https://social-media-next-js-blond.vercel.app/" target="_blank">
+                  <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project">
+              <img src="assets/fp.png" alt="project2" />
+              <div class="layer">
+                <h3>Pet Store (E-Commerce)</h3>
+                <p>
+                  A WordPress pet supplies shop.<br>
+                  - WordPress, WooCommerce <br>
+                  - Custom theme (Underscores)<br>
+                  - Bootstrap, Mobile responsive 
+                </p>
+                <a href="https://furrypets.great-site.net/"
+                  ><i class="fa fa-external-link" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project">
+              <img src="assets/wime.png" alt="project3" />
+              <div class="layer">
+                <h3>Will It Miss Earth?</h3>
+                <p>
+                  Did you know potentially-catastrophic asteroids miss our planet daily?<br>
+                  - React, HTML/CSS/JS <br>
+                  - NeoWS (Nasa's public API)
+                </p>
+                <a href="https://heroic-rolypoly-6fa888.netlify.app/"
+                  ><i class="fa fa-external-link" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project">
+              <img src="assets/library.png" alt="project3" />
+              <div class="layer">
+                <h3>Library Catalog (Backend)</h3>
+                <p>
+                 A system to manage/view books in a library. <br>
+                 - Python-Django <br>
+                 - NoSQL Lite <br>
+                 - Users, Admin
+                </p>
+                <a href="https://leiste15.pythonanywhere.com/catalog/"
+                  ><i class="fa fa-external-link" aria-hidden="true"></i
+                ></a>
+              </div>
+          </div>
+      </section>
+    <div class="github-btn-div">
+      <a href="https://github.com/EverOnward15?tab=repositories" target="_blank" class="github-btn">Source Code / More Projects (Github)</a>
+    </div>
+      <!-- Testimonial section -->
+      <section id="testimonial">
+        <div class="section-title">
+          <h2 class="sub-title">Testimonials</h2>
+          <h3 class="title">What People Are Saying</h3>
+          <div class="testimonial-list">
+            <div class="review">
+              <div class="review-by">
+                <div class="img test-icon">
+                  <i class="fa-solid fa-s"></i>
+                </div>
+                <div class="info">
+                  <h3 class="name">S M</h3>
+                  <h5 class="resignation">Past Client</h5>
+                </div>
+              </div>
+              <i class="fa-solid fa-quote-left"></i>
+              <p class="review-text">
+                "The more I work with Prathamesh, the better his work is! I look forward to working with him again."
+              </p>
+            </div>
+            <div class="review">
+              <div class="review-by">
+                <div class="img">
+                  <i class="fa-solid fa-e"></i>
+                </div>
+                <div class="info">
+                  <h3 class="name">E S</h3>
+                  <h5 class="resignation">Former Manager</h5>
+                </div>
+              </div>
+              <i class="fa-solid fa-quote-left"></i>
+              <p class="review-text">
+                "Prathamesh was a great addition to our staff. I know he will approach his future endeavors
+                with the same skill, vigor, and devotion he has given us."
+              </p>
+            </div>
+            <div class="review">
+              <div class="review-by">
+                <div class="img">
+                  <i class="fa-solid fa-c"></i>
+                </div>
+                <div class="info">
+                  <h3 class="name">C S</h3>
+                  <h5 class="resignation">Past Client</h5>
+                </div>
+              </div>
+              <i class="fa-solid fa-quote-left"></i>
+              <p class="review-text">
+                "Good work."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact section -->
+      <section id="contact">
+        <div class="section-title">
+          <h2 class="sub-title">Contact Details</h2>
+          <h3 class="title">Get in Touch</h3>
+        </div>
+        <div class="content">
+          <div class="contact-left">
+            <form action="">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit">
+                Send Message <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+          <div class="vl"></div>
+          <div class="contact-right">
+            <div class="col address">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="info">
+                <h2 class="title">Address</h2>
+                <p>95B Sidhatek Society, Prabhat Road, Pune - 4 (MH, India)</p>
+              </div>
+            </div>
+            <div class="col phone">
+              <i class="fa-solid fa-phone"></i>
+              <div class="info">
+                <h2 class="title">Phone</h2>
+                <p><a href="tel:+919822229818">+91 982222 9818</a></p>
+              </div>
+            </div>
+            <div class="col email">
+              <i class="fa-solid fa-envelope"></i>
+              <div class="info">
+                <h2 class="title">Email</h2>
+                <p><a href="mailto:leiste15@gmail.com">l e i s t e 1 5 @gmail.com </a> (no spaces)</p>
+              </div>
+            </div>
+            <div class="col website">
+              <i class="fa-brands fa-upwork"></i>
+              <div class="info">
+                <h2 class="title">Upwork</h2>
+                <p>Hire me through <a href="https://www.upwork.com/freelancers/~01f399fca4989084d0" target="_blank">Upwork</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            Copyright <span class="year" id="year"></span> ©️ Prathamesh Bhoite | Made with
+            <i class="fa-solid fa-heart"></i> by
+            <a href="#">Prathamesh Bhoite</a>
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
