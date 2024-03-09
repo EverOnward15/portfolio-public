@@ -26,6 +26,21 @@ function closeMenu() {
   sideMenu.style.right = "-200px";
 }
 
+//Date for copyright at bottom
 const date = new Date();
 let year = date.getFullYear();
 document.getElementById("year").innerHTML = year;
+
+//Display/hide Captcha div
+var captcha = document.getElementById("captcha");
+var message = document.getElementById("message");
+message.addEventListener("keypress", displayCaptcha);
+function displayCaptcha(e) {
+  captcha.classList.remove("invisible");
+}
+message.addEventListener("focusout", hideCaptcha);
+function hideCaptcha() {
+  if (message.value == "") {
+    captcha.classList.add("invisible");
+  }
+}

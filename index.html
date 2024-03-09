@@ -81,7 +81,7 @@ Copyright: ©MdRasen -->
             <p class="tab-links active-link" onclick="openTab('skills')">
               Skills
             </p>
-            <p class="tab-links" onclick="openTab('experience')">Computer Languages</p>
+            <p class="tab-links" onclick="openTab('experience')">Languages</p>
             <!-- <p class="tab-links" onclick="openTab('education')">Spoken Languages</p> -->
           </div>
           <div class="tab-contents active-tab" id="skills">
@@ -295,7 +295,8 @@ Copyright: ©MdRasen -->
         </div>
         <div class="content">
           <div class="contact-left">
-            <form action="">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="973d0acd-6e8c-495a-a5ab-43e34535eb4d">
               <input type="text" name="Name" placeholder="Your Name" required />
               <input
                 type="email"
@@ -307,11 +308,16 @@ Copyright: ©MdRasen -->
                 name="Message"
                 rows="6"
                 placeholder="Your Message"
+                required
+                id = "message"
               ></textarea>
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              <div id="captcha" class="h-captcha invisible" data-captcha="true"></div>
               <button type="submit">
                 Send Message <i class="fa-solid fa-arrow-right"></i>
               </button>
             </form>
+
           </div>
           <div class="vl"></div>
           <div class="contact-right">
@@ -357,5 +363,6 @@ Copyright: ©MdRasen -->
 
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>

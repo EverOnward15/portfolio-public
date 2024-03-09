@@ -583,6 +583,11 @@ img {
   color: red;
 }
 
+.invisible {
+  display: none;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 900px) {
