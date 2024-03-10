@@ -44,3 +44,5 @@ function hideCaptcha() {
     captcha.classList.add("invisible");
   }
 }
+
+//Media query -- Make portfolio text less intrusive on smaller screens

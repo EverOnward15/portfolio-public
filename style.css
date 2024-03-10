@@ -195,6 +195,10 @@ img {
   line-height: 1;
 }
 
+.about-list {
+  line-height: 140%;
+}
+
 .about-right .desc {
   font-size: 16px;
   line-height: 1.4;
@@ -235,7 +239,7 @@ img {
 
 .about-right .tab-contents ul li {
   list-style:none;
-  font-size: 15px;
+  font-size: 17px;
   margin: 10px 0;
   
 }
@@ -247,7 +251,7 @@ img {
 
 .about-right .tab-contents ul li span {
   color: #ffc800;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -287,6 +291,10 @@ img {
   font-weight: 400;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.services div p {
+  line-height: 140%;
 }
 
 .services div i {
@@ -622,6 +630,11 @@ img {
     cursor: pointer;
   }
 
+  .sub-title {
+    text-align: center;
+  }
+
+
   #about .about-left {
     flex-basis: 100%;
     margin-bottom: 40px;
@@ -681,6 +694,21 @@ img {
 }
 
 @media (max-width: 560px) {
+#header .header-bottom  {
+  background-position: 50%;
+}
+
+#header .bottom-left {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  margin-top: 500px;
+  /* padding-top: 90%; */
+  padding-bottom: 40px;
+}
+
+
+
   .header-bottom .bottom-left .name {
     font-size: 40px;
   }
@@ -706,6 +734,18 @@ img {
   .about-right .tab-contents ul li,
   .about-right .tab-contents ul li span {
     font-size: 18px;
+  }
+
+  .about-list {
+    line-height: 150%;
+  }
+
+  .services div i {
+    margin-left: 40%;
+  }
+
+  .services div h2 {
+    text-align: center;
   }
 
   #contact .content {
