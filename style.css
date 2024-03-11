@@ -696,7 +696,11 @@ img {
 @media (max-width: 560px) {
 #header .header-bottom  {
   background-position: 50%;
+  height: 90vh;
+  padding-bottom: 70px;
+  padding-top: 50px;
 }
+
 
 #header .bottom-left {
   margin-left: auto;
@@ -711,6 +715,7 @@ img {
 
   .header-bottom .bottom-left .name {
     font-size: 40px;
+
   }
 
   .bottom-left .profession {
@@ -721,6 +726,7 @@ img {
     font-size: 18px;
     padding-right: 20%;
   }
+
 
   .about-left img {
     width: 80%;
