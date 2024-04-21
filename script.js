@@ -44,3 +44,26 @@ function hideCaptcha() {
     captcha.classList.add("invisible");
   }
 }
+
+//FAQs
+document.addEventListener('DOMContentLoaded', function () {
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach((question) => {
+    question.addEventListener('click', function () {
+      const answer = this.nextElementSibling;
+
+      if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        question.classList.add('border')
+      } else {
+        const allAnswers = document.querySelectorAll('.answer');
+        allAnswers.forEach((ans) => ans.classList.remove('show'));
+        answer.classList.add('show');
+        question.classList.remove('border');
+      }
+    });
+  });
+});
+
+
