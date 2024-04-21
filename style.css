@@ -36,6 +36,12 @@ img {
   z-index: 99;
 }
 
+.fa-home {
+  color: white;
+  position: absolute;
+  margin-left: 10px;
+}
+
 .header-top .logo a {
   text-decoration: none;
   color: #fff;
@@ -667,6 +673,10 @@ img {
     display: block;
     color: #faca22;
     font-size: 20px;
+  }
+
+  .fa-home {
+    display: none;
   }
 
   .nav-menu ul {
