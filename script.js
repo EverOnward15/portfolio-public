@@ -66,4 +66,33 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+/*Smoke animation*/
+document.addEventListener('DOMContentLoaded', function() {
+  let trailContainer = document.getElementById('rainbow-trail');
+  let numParticles = 50;
+  let particles = [];
 
+  // Create trail particles
+  for (let i = 0; i < numParticles; i++) {
+    createTrailParticle();
+  }
+
+  // Function to create a trail particle
+  function createTrailParticle() {
+    let particle = document.createElement('div');
+    particle.className = 'trail-particle';
+    particle.classList.add('rainbow-' + (Math.floor(Math.random() * 7) + 1)); // Random rainbow color
+    trailContainer.appendChild(particle);
+    particles.push(particle);
+  }
+
+  // Update trail particle positions on mousemove
+  document.addEventListener('mousemove', function(event) {
+    particles.forEach(function(particle) {
+      let offsetX = Math.random() * 50 - 25; // Random offset to make the trail look more natural
+      let offsetY = Math.random() * 50 - 25;
+      particle.style.left = (event.pageX + offsetX) + 'px';
+      particle.style.top = (event.pageY + offsetY) + 'px';
+    });
+  });
+});

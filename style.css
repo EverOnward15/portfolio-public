@@ -890,3 +890,44 @@ img {
     font-size: 1rem;
   }
 }
+
+/*Heart animation */
+.heart {
+  animation: beat 1s infinite alternate;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/*Rainbow smoke */
+#rainbow-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Ensure the trail doesn't interfere with mouse events */
+  z-index: 9999; /* Ensure the trail is above other content */
+}
+
+.trail-particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none; /* Ensure the particle doesn't interfere with mouse events */
+  opacity: 0.8;
+}
+
+/* Additional styling for the rainbow effect */
+.rainbow-1 { background-color: #ff0000; }
+.rainbow-2 { background-color: #ff7f00; }
+.rainbow-3 { background-color: #ffff00; }
+.rainbow-4 { background-color: #00ff00; }
+.rainbow-5 { background-color: #0000ff; }
+.rainbow-6 { background-color: #4b0082; }
+.rainbow-7 { background-color: #9400d3; }
