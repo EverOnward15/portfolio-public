@@ -770,7 +770,7 @@ img {
 @media (max-width: 560px) {
 #header .header-bottom  {
   background-position: 50%;
-  height: 90vh;
+  height: 100vh;
   padding-bottom: 70px;
   padding-top: 50px;
 }
