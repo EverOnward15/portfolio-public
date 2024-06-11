@@ -96,3 +96,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+//Adding case study page
+// Get references to the popup and close button
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('close-btn');
+
+// Function to open the popup
+function openPopup() {
+    popup.style.display = 'block';
+}
+
+// Function to close the popup
+function closePopup() {
+    popup.style.display = 'none';
+}
+
+function navigateToConexus() {
+  window.open("https://conexus.vn", "_blank");
+}
+
+
+// Event listener to open the popup when a project is clicked
+const projectLink = document.getElementById('case-study'); 
+projectLink.addEventListener('click', navigateToConexus);
+const projectLink2 = document.getElementById('popup-2'); 
+projectLink2.addEventListener('click', openPopup);
+
+
+// Event listener to close the popup when the close button is clicked
+closeBtn.addEventListener('click', closePopup);
+
+// Get the anchor element
+const readCaseStudyBtn = document.getElementById('read-case-study');
+
+// Prevent the default action when the button is clicked
+readCaseStudyBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Add your custom code here, if needed
+});

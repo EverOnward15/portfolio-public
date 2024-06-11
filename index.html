@@ -83,10 +83,11 @@
           and companies worldwide in technical, semi-technical, and non-technical capacities.
           <br>
           <br>
+          I have a handful of years of experience with technical web development.
+          <br>
+          <br>
           I have near 14 years of experience in content writing, copywriting, digital marketing, and SEO.
           <br>
-          <br>
-          I have a handful of years of experience with technical web development.
         </p>
         <div class="about-list">
           <ul>
@@ -183,7 +184,7 @@
           <i class="fa-brands fa-pix"></i>
           <h2>Basic Web Design</h2>
           <p>
-            I can design functional website layouts from scratch. I know my way around Figma and Photoshop.
+            I can design functional website mockups from scratch for desktops, tablets, and mobiles. I know my way around Figma and Photoshop. I can also make basic logos and graphcis (and advanced ones with AI). 
           </p>
         </div>
       </div>
@@ -251,10 +252,116 @@
             </div>
           </div>
     </section>
+
     <div class="github-btn-div">
       <a href="https://github.com/EverOnward15?tab=repositories" target="_blank" class="github-btn">Source Code / More
         Projects (Github)</a>
     </div>
+
+    <div class="github-btn-div case">
+      <h2 class="">Featured Case Study </h2>
+      <h3 class="title">Crypto Currency Calculator (SPA) for <br> Conexus Crypto</a> (Vietnam, SA, Dubai, Georgia, and Russia)</h3>
+      <div class="project case-study">
+        <img id="case-study" class="case-study-img" src="assets/crypto.png"  alt="project1" />
+      </div>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Case Study: Solo Development of a Mobile Crypto Calculator for <a href="https://www.conexuscryptovietnam.com/" target="_blank">Conexus Crypto</a></h2>
+            <h3>Client Overview</h3>
+            <p>Conexus Crypto, a leading cryptocurrency exchange platform, required a specialized web page to facilitate cryptocurrency transactions in Vietnamese Dong (VND). The objective was to create a mobile-optimized calculator that would enable users to convert VND into various cryptocurrencies, display wallet information for transfers, and forward transaction details via Telegram and Google Sheets.</p>
+            
+            <h3>Project Details</h3>
+            <ul>
+                <li><strong>Platform:</strong> WordPress</li>
+                <li><strong>Technologies Used:</strong> PHP, JavaScript, CSS</li>
+                <li><strong>Languages:</strong> English, Russian, Vietnamese</li>
+                <li><strong>APIs:</strong> Yahoo Finance API, Google Sheets API, Telegram API</li>
+                <li><strong>Live URL: </strong><a href="http://conexus.vn/" target="_blank">Conexus.vn</a></li>
+            </ul>
+    
+            <h3>Project Scope</h3>
+            <h4>User Input for Conversion Amount</h4>
+            <p>Users enter the amount they need in VND (e.g., 5,000,000 VND).</p>
+            
+            <h4>Cryptocurrency Selection</h4>
+            <p>Users choose from five available cryptocurrencies. Each option displays the equivalent amount in cryptocurrency and the respective exchange rate fetched from Yahoo Finance. A variable markup is added to the final cryptocurrency total, based on the purchase amount.</p>
+            
+            <h4>Transaction Details</h4>
+            <p>Users are presented with a QR code, wallet number, and the amount in the chosen cryptocurrency for the transfer.</p>
+            
+            <h4>Transaction Confirmation</h4>
+            <p>Users upload a screenshot of the transfer, which is sent to the operator via Telegram and recorded in Google Sheets for further processing. Alternatively, they upload a URL to the completed transaction.</p>
+            
+            <h4>Thank You Page</h4>
+            <p>Users are redirected to a thank-you page with additional information and contact details for future transactions. Transfers need to be manually confirmed for security reasons, and users are informed of the ETA.</p>
+    
+            <h3>Implementation</h3>
+            <h4>Step 1: Conversion Input</h4>
+            <p>A complex input form was created using PHP to capture the amount in VND. Input checks were placed (forced numbers, no text, reg exp to exclude some characters). Input data was sanitized thoroughly. A minimum-amount info message was added (allowable transactions needed to exceed 10 USD.).</p>
+            <p><strong>Example:</strong> User inputs 5,000,000 VND.</p>
+            
+            <h4>Step 2: Cryptocurrency Selection</h4>
+            <p>JS scripts fetch exchange rates from Yahoo Finance. Display cryptocurrencies table with respective rates.</p>
+            <p><strong>Example Rates:</strong></p>
+            <ul>
+                <li>USDT TRC20: 200 USDT (1 USDT = 2,500,000 VND)</li>
+                <li>Bitcoin: 0.002 BTC (1 BTC = 1,800,000,000 VND)</li>
+            </ul>
+            <p>Ensured exchange rates were updated automatically in real-time, with minimal calls.</p>
+            
+            <h4>Step 3: Display Final Amount Information</h4>
+            <p>Generated equivalent total to be transferred in the chosen cryptocurrency, after markup and conversion. Displayed wallet numbers and QR code for the chosen amount dynamically.</p>
+            <p><strong>Example:</strong> Final total: 200 USDT. Transfer to Wallet QR or number: 123456.</p>
+            
+            <h4>Step 4: Upload and Confirmation</h4>
+            <p>Integrated a file upload feature for users to submit transfer screenshots. Utilized PHP to handle file uploads and store references in a database. Sent transaction details, including partner UTM tags, to the operator via Telegram and Google Sheets API.</p>
+            
+            <h4>Multilingual Support</h4>
+            <p>Implemented language support in English, Russian, and Vietnamese. Texts provided by the client were integrated into the platform. Users could switch languages seamlessly.</p>
+            
+            <h3>Challenges</h3>
+            <ul>
+                <li><strong>Lack of Yahoo Finance API documentation:</strong> Yahoo Finance API is not directly supported by Yahoo anymore. As a workaround, a third-party paid solution (RapidAPI) affiliated with Yahoo Finance had to be integrated instead. Said solution had no documentation. Manual search queries had to be made to the API to find relevant endpoints, to obtain valid rates in real-time, and displayed (and used) as needed within the app.</li>
+                <li><strong>Lack of direct Crypto to Vietnamese Dong conversion rates:</strong> Yahoo Finance does not support direct conversions from crypto (like BTC, ETH, USDT) to VND. As a workaround, USD was used as an intermediary currency. Essentially, crypto was first converted to USD, and then VND. This added an extra layer of complexity to the calculations.</li>
+                <li><strong>Complex calculations:</strong> Complex calculations, up to 8 decimal places to cover 1 “Satoshi” or smallest allowable BTC amount, had to be added — with a markup to make it feasible for the client to support payments. For example, BTC had to have a minimum transaction amount of USD 50 (converted to VND), with a 4% initial markup. Lower-value transactions had to be disallowed. The markup was reduced to 3% for amounts over $200, and 2% for amounts over $400. Said calculations had to be done for all available cryptocurrencies, with unique markups, and displayed to the visitor in local VND.</li>
+                <li><strong>Telegram API picture requirements:</strong> The transaction had to be sent as a picture to Telegram, with various details to be added as caption elements, for manual perusal. To make this work, the picture had to be drawn via Canvas API, converted to base 64, sent to WP PHP server via AJAX requests, sanitized with MIDI checks, and finally forwarded to Telegram.</li>
+                <li><strong>Multi-part Forms:</strong> The forms for the transaction had to be added with WP Forms 7, so that the client could modify them later personally, without using code. This added an extra layer of complexity. The forms had to be hidden with CSS, and linked “on click” with JS. It became a pseudo-SPA, in the end.</li>
+            </ul>
+            
+            <h3>Outcome</h3>
+            <p>The project was successfully launched and met all client expectations. Key achievements include:</p>
+            <ul>
+                <li><strong>User-Friendly Interface:</strong> The calculator was intuitive and easy to navigate on mobile devices.</li>
+                <li><strong>Real-Time Conversions:</strong> Automatic fetching and updating of exchange rates ensured accurate and real-time conversions.</li>
+                <li><strong>Secure Transactions:</strong> QR codes and wallet details were securely generated and displayed.</li>
+                <li><strong>Efficient Processing:</strong> Transaction details were promptly sent to the operator, enhancing operational efficiency.</li>
+                <li><strong>Multilingual Accessibility:</strong> The page was accessible in three languages, broadening its usability.</li>
+                <li><strong>UTM Network:</strong> Automatically integrated into existing UTM network.</li>
+            </ul>
+    
+            <h3>Client Feedback</h3>
+            <p>Conexus Crypto Exchange appreciated the timely delivery and the robust functionality of the crypto calculator. They particularly valued the seamless integration with Telegram and Google Sheets, which streamlined their transaction confirmation process.</p>
+            
+            <h3>Future Enhancements</h3>
+            <p>Based on client feedback, potential future improvements include:</p>
+            <ul>
+                <li>Adding support for additional cryptocurrencies.</li>
+                <li>Recreating the program for the SA division.</li>
+                <li>Expanding into a full-fledged crypto wallet and currency exchange service.</li>
+            </ul>
+    
+            <p>This case study highlights the successful development and deployment of a cryptocurrency calculator for Conexus Crypto Exchange, showcasing the practical application of WordPress and PHP in creating specialized financial tools.</p>
+    
+            <button id="close-btn">Close</button>
+        </div>
+    </div>
+    <div id="popup-2" class="github-btn-div case-study-btn">
+      <a href="" id="read-case-study" class="github-btn">Read Case Study</a>
+    </div>
+    </div>
+
+
+
     <!-- Testimonial section -->
     <section id="testimonial">
       <div class="section-title">
