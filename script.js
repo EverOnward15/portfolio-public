@@ -67,35 +67,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /*Smoke animation*/
-document.addEventListener('DOMContentLoaded', function() {
-  let trailContainer = document.getElementById('rainbow-trail');
-  let numParticles = 50;
-  let particles = [];
+// document.addEventListener('DOMContentLoaded', function() {
+//   let trailContainer = document.getElementById('rainbow-trail');
+//   let numParticles = 50;
+//   let particles = [];
 
-  // Create trail particles
-  for (let i = 0; i < numParticles; i++) {
-    createTrailParticle();
-  }
+//   // Create trail particles
+//   for (let i = 0; i < numParticles; i++) {
+//     createTrailParticle();
+//   }
 
-  // Function to create a trail particle
-  function createTrailParticle() {
-    let particle = document.createElement('div');
-    particle.className = 'trail-particle';
-    particle.classList.add('rainbow-' + (Math.floor(Math.random() * 7) + 1)); // Random rainbow color
-    trailContainer.appendChild(particle);
-    particles.push(particle);
-  }
+//   // Function to create a trail particle
+//   function createTrailParticle() {
+//     let particle = document.createElement('div');
+//     particle.className = 'trail-particle';
+//     particle.classList.add('rainbow-' + (Math.floor(Math.random() * 7) + 1)); // Random rainbow color
+//     trailContainer.appendChild(particle);
+//     particles.push(particle);
+//   }
 
-  // Update trail particle positions on mousemove
-  document.addEventListener('mousemove', function(event) {
-    particles.forEach(function(particle) {
-      let offsetX = Math.random() * 50 - 25; // Random offset to make the trail look more natural
-      let offsetY = Math.random() * 50 - 25;
-      particle.style.left = (event.pageX + offsetX) + 'px';
-      particle.style.top = (event.pageY + offsetY) + 'px';
-    });
-  });
-});
+//   // Update trail particle positions on mousemove
+//   document.addEventListener('mousemove', function(event) {
+//     particles.forEach(function(particle) {
+//       let offsetX = Math.random() * 50 - 25; // Random offset to make the trail look more natural
+//       let offsetY = Math.random() * 50 - 25;
+//       particle.style.left = (event.pageX + offsetX) + 'px';
+//       particle.style.top = (event.pageY + offsetY) + 'px';
+//     });
+//   });
+// });
 
 
 //Adding case study page
@@ -119,7 +119,7 @@ function navigateToConexus() {
 
 
 // Event listener to open the popup when a project is clicked
-const projectLink = document.getElementById('case-study'); 
+const projectLink = document.getElementById('case-study-img'); 
 projectLink.addEventListener('click', navigateToConexus);
 const projectLink2 = document.getElementById('popup-2'); 
 projectLink2.addEventListener('click', openPopup);
@@ -134,5 +134,4 @@ const readCaseStudyBtn = document.getElementById('read-case-study');
 // Prevent the default action when the button is clicked
 readCaseStudyBtn.addEventListener('click', function(event) {
     event.preventDefault();
-    // Add your custom code here, if needed
 });
