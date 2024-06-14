@@ -962,7 +962,7 @@ img {
 
   .popup-content{
   padding: 5px;
-  width: 90%;
+  min-width: 320px;
   max-width: none;
   }
 }
@@ -1020,6 +1020,12 @@ img {
     width: 90%;
     max-width: none;
     }
+
+    .popup-content{
+      padding: 5px;
+      min-width: 325px;
+      max-width: none;
+      }
 }
 
 /*Heart animation */
