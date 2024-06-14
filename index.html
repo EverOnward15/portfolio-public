@@ -308,7 +308,7 @@
 
           <h3>Implementation</h3>
           <h4>Step 1: Conversion Input</h4>
-          <p>A complex input form was created using PHP to capture the amount in VND. Input checks were placed (forced
+          <p>A complex input form was created using WP Forms 7 and custom HTML/JS/CSS (support 3 languages) to capture the amount in VND. Input checks were placed (forced
             numbers, no text, reg exp to exclude some characters). Input data was sanitized thoroughly. A minimum-amount
             info message was added (allowable transactions needed to exceed 10 USD.).</p>
           <p><strong>Example:</strong> User inputs 5,000,000 VND.</p>
@@ -330,7 +330,7 @@
 
           <h4>Step 4: Upload and Confirmation</h4>
           <p>Integrated a file upload feature for users to submit transfer screenshots. Utilized PHP to handle file
-            uploads and store references in a database. Sent transaction details, including partner UTM tags, to the
+            uploads and store references in a database. Sent transaction details, including partner UTM tags (fetched form the URL), to the
             operator via Telegram and Google Sheets API.</p>
 
           <h4>Multilingual Support</h4>
