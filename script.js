@@ -135,3 +135,98 @@ const readCaseStudyBtn = document.getElementById('read-case-study');
 readCaseStudyBtn.addEventListener('click', function(event) {
     event.preventDefault();
 });
+
+
+
+
+//SCroll
+
+/// Hide scroll to top button by default
+document.querySelector('.scroll-to-top').style.display = 'none';
+
+// Show scroll to top button when scrolling past the hero section
+window.addEventListener('scroll', function() {
+  var scrollPosition = window.scrollY;
+  var heroSectionHeight = document.querySelector('#header').offsetHeight;
+  var scrollButton = document.querySelector('.scroll-to-top');
+
+  if (scrollPosition > heroSectionHeight) {
+    scrollButton.style.display = 'block';
+  } else {
+    scrollButton.style.display = 'none';
+  }
+});
+
+// Image sources
+const fullResImages = [
+  "/assets/lotus-crypto 2.jpeg",
+  "/assets/happy-inr.in.png",
+  "/assets/staynido2.jpeg",
+  "/assets/1tamilmv.fan.jpeg",
+  "/assets/forever-studios-c.jpeg",
+];
+
+// Dynamically generate low-quality placeholders using a canvas
+async function generateLowQualityImage(src) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const scaleFactor = 0.8; // Reduce quality by 90%
+      canvas.width = img.width * scaleFactor;
+      canvas.height = img.height * scaleFactor;
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL('image/jpeg', 0.5)); // Low-quality JPEG
+    };
+  });
+}
+
+// Generate and apply thumbnails
+async function generateThumbnails() {
+  const thumbnails = await Promise.all(fullResImages.map(generateLowQualityImage));
+  const buildings = document.querySelectorAll('.building');
+
+  buildings.forEach((building, index) => {
+    if (thumbnails[index]) {
+      building.style.backgroundImage = `url('${thumbnails[index]}')`;
+    } else {
+      console.error(`Thumbnail not generated for index ${index}`);
+    }
+  });
+}
+
+// Open fullscreen modal with high-resolution image
+function openFullscreen(index) {
+  const modal = document.getElementById('fullscreenModal');
+  const fullscreenImage = document.getElementById('fullscreenImage');
+
+  if (fullResImages[index]) {
+    fullscreenImage.src = fullResImages[index];
+    modal.style.display = 'flex';
+    document.body.classList.add("no-scroll"); // Disable scrolling on body
+  } else {
+    console.error(`Full-resolution image not found for index ${index}`);
+  }
+}
+
+// Close fullscreen modal
+function closeFullscreen() {
+  const modal = document.getElementById('fullscreenModal');
+  modal.style.display = 'none';
+  document.body.classList.remove("no-scroll"); // Re-enable scrolling on body
+}
+
+// Navigate images
+function navigate(direction) {
+  if (direction === 1) {
+    fullResImages.push(fullResImages.shift());
+  } else if (direction === -1) {
+    fullResImages.unshift(fullResImages.pop());
+  }
+  generateThumbnails(); // Refresh thumbnails
+}
+
+// Initialize gallery
+generateThumbnails();

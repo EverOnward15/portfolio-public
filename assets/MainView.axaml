@@ -1,0 +1,295 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:FlowianTracker.Views"
+             mc:Ignorable="d" Width="350" Height="900"
+			 Background="#F5F5F5"
+             x:Class="FlowianTracker.Views.MainView"
+			 x:DataType="views:MainView" >
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+	</Design.DataContext>
+	<StackPanel>
+
+		<Grid Margin="20">
+			<!-- 
+            Top row: A simple colored header. 
+            Second row: The main content area with a border and a two-column layout.
+        -->
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<StackPanel>
+
+				<!-- Header -->
+				<Border
+					Grid.Row="0"
+					Background="#6200EE"
+					CornerRadius="8"
+					Padding="15"
+					Margin="0 0 0 20">
+					<TextBlock
+						Text="Flowian Tracker"
+						Foreground="White"
+						FontSize="22"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"/>
+				</Border>
+
+				<!-- Basic ToggleSwitch with text content -->
+				<Border
+					Grid.Row="0"
+					Background="#6200EE"
+					CornerRadius="8"
+					Padding="15"
+					Margin="0 0 0 20">
+					<StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock
+								Margin="0 0 10 5"
+								FontWeight="Bold"
+								Background="#6200EE"
+								Padding="15"
+								FontSize="20"
+								Text="{Binding TrackedTime}"/>
+							<ToggleSwitch IsChecked="{Binding IsTrackingEnabled, Mode=TwoWay}" />
+						</StackPanel>
+
+						<TextBlock
+							Margin="0 0 10 5"
+							FontWeight="Bold"
+							Background="#6200EE"
+							Padding="15"
+							Text="Memo"/>
+						<TextBox Name="tbSettingText" Watermark="What are you working on?">
+						</TextBox>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+
+			<!-- Main Content in a Border -->
+			<Border
+				Grid.Row="1"
+				BorderBrush="#CCCCCC"
+				BorderThickness="1"
+				CornerRadius="8"
+				Background="#a0a000"
+				Padding="20">
+
+				<!-- A two-column grid for label/value pairs -->
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<!-- Enough rows for each piece of data + 1 row for button -->
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+
+					<!-- Current Time -->
+					<TextBlock
+						Grid.Row="0"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Current Time:"/>
+					<TextBlock
+						Grid.Row="0"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding CurrentTime}"/>
+
+					<!-- Current Time -->
+					<TextBlock
+						Grid.Row="1"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Enabled:"/>
+					<TextBlock
+						Grid.Row="1"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding IsTrackingEnabled}"/>
+
+					<!-- Last Key Pressed -->
+					<TextBlock
+						Grid.Row="2"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Last Key Pressed:"/>
+					<TextBlock
+						Grid.Row="2"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding LastKeyPressed}"/>
+
+					<!-- Keys Pressed -->
+					<TextBlock
+						Grid.Row="3"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Keys Pressed:"/>
+					<TextBlock
+						Grid.Row="3"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding KeysPressedCount}"/>
+
+					<!-- Active Window Name -->
+					<TextBlock
+						Grid.Row="4"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Active Window Name:"/>
+					<TextBlock
+						Grid.Row="4"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding ActiveWindowName}"/>
+
+					<!-- Mouse Last Clicked -->
+					<TextBlock
+						Grid.Row="5"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Mouse Last Clicked:"/>
+					<TextBlock
+						Grid.Row="5"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding LastMouseClickedTime}"/>
+
+					<!-- Mouse Left Clicks -->
+					<TextBlock
+						Grid.Row="6"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Mouse Left Clicks:"/>
+					<TextBlock
+						Grid.Row="6"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding MouseLClicksCount}"/>
+
+					<!-- Mouse Right Clicks -->
+					<TextBlock
+						Grid.Row="7"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Mouse Right Clicks:"/>
+					<TextBlock
+						Grid.Row="7"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding MouseRClicksCount}"/>
+
+					<!-- Mouse Middle Clicks -->
+					<TextBlock
+						Grid.Row="8"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Mouse M Clicks:"/>
+					<TextBlock
+						Grid.Row="8"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding MouseMClicksCount}"/>
+
+					<!-- Mouse X Clicks -->
+					<TextBlock
+						Grid.Row="9"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Mouse X Clicks:"/>
+					<TextBlock
+						Grid.Row="9"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding MouseXClicksCount}"/>
+
+					<!-- Mouse Scrolls -->
+					<TextBlock
+						Grid.Row="10"
+						Grid.Column="0"
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Text="Mouse Scrolls:"/>
+					<TextBlock
+						Grid.Row="10"
+						Grid.Column="1"
+						Margin="0 0 0 5"
+						Text="{Binding MouseScrollsCount}"/>
+
+				</Grid>
+			</Border>
+		</Grid>
+		<Border
+				BorderBrush="#CCCCCC"
+				BorderThickness="1"
+				CornerRadius="8"
+				Background="#a0a000"
+				Padding="20">
+			<StackPanel>
+
+				<StackPanel Orientation="Horizontal">
+					<TextBlock
+						Margin="0 0 10 5"
+						FontWeight="Bold"
+						Padding="15"
+						FontSize="20"
+						Text="Auto Screenshots"/>
+					<ToggleSwitch IsChecked="{Binding IsScreenshotsEnabled, Mode=TwoWay}" />
+
+				</StackPanel>
+				<!-- Button -->
+				<Button
+					HorizontalAlignment="Left"
+					Width="200"
+					Margin="0 0 0 0"
+					Background="#6200EE"
+					Foreground="White"
+					Content="Take Manual Screenshot"
+					Click="TakeScreenshot_OnClick"/>
+
+				<!-- Button -->
+				<Button
+					HorizontalAlignment="Left"
+					Width="200"
+					Margin="0 0 0 0"
+					Background="#6200EE"
+					Foreground="White"
+					Content="Open Dialog"
+					Click="OpenDialog_OnClick"/>
+
+				<!-- Image -->
+				<Image Name="myImageControl" Stretch="Fill" />
+
+			</StackPanel>
+		</Border>
+	</StackPanel>
+</UserControl>
