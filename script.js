@@ -159,11 +159,11 @@ window.addEventListener('scroll', function() {
 
 // Image sources
 const fullResImages = [
-  "/assets/lotus-crypto 2.jpeg",
-  "/assets/happy-inr.in.png",
-  "/assets/staynido2.jpeg",
-  "/assets/1tamilmv.fan.jpeg",
-  "/assets/forever-studios-c.jpeg",
+  "assets/lotus-crypto 2.jpeg",
+  "assets/happy-inr.in.png",
+  "assets/staynido2.jpeg",
+  "assets/1tamilmv.fan.jpeg",
+  "assets/forever-studios-c.jpeg",
 ];
 
 // Dynamically generate low-quality placeholders using a canvas
