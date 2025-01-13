@@ -1681,6 +1681,19 @@ image {
     #testimonial {
       padding-bottom: 10px;
     }
+
+        .bottom-left {
+      padding-top: 60px;
+      padding-bottom: 0px !important;
+    }
+
+    h3.profession {
+      margin-top: 10px !important;
+    }
+
+    .about-left img {
+      height: 240px;
+    }
 }
 
 .about-left img {
