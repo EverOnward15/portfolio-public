@@ -1537,13 +1537,11 @@ image {
   cursor: pointer;
 }
 
+
 @media (max-width: 768px) {
   .image-gallery {
     display: none;
   }
-}
-.logo-text span {
-  margin-left: 50px !important;
 }
 
 @media (max-width: 768px) {
@@ -1684,9 +1682,6 @@ image {
     #testimonial {
       padding-bottom: 10px;
     }
-    .logo-text span {
-      margin: 0 auto !important;
-    }
 }
 
 .about-left img {
@@ -1718,12 +1713,3 @@ image {
 .no-scroll {
   overflow: hidden; /* Disable scrolling */
 }
-
-/* 
-.logo-text {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center; 
-} */
-
