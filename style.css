@@ -163,10 +163,9 @@ img {
 
   /* Concrete-like texture or "mortar" effect */
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2), 4px 4px 15px rgba(0, 0, 0, 0.3);
-  /* background-color: #000000; */
+
   /* Border simulating mortar */
-  border: 2px solid #F9CA22;
-  color: #F9CA22;
+  border: 2px solid #d0d0d0;
 }
 
 .bottom-left .btn-cv:hover {
@@ -175,8 +174,7 @@ img {
 }
 
 .bottom-left .btn-cv:hover {
-  background-color: #F9CA22;
-  color: black;
+  background-color: #fff;
   transform: scale(1.1);
 }
 
@@ -211,11 +209,11 @@ img {
   margin: 5px 5px;
   /* padding: 0px !important; */
 
-/* .logo-text {
+.logo-text {
   display: inline-flex;
   flex-direction: row;
   height: 100%;
-} */
+}
 
 .logo {
   max-width: 212px;
@@ -236,8 +234,8 @@ img {
   justify-content: center;
   background-color: #000 !important;
   margin-bottom: 5px;
-  border: none !important;
-  color: #faca22;
+  color: #faca22 !important;
+
 }
 
 .top-icons {
@@ -249,19 +247,23 @@ img {
   justify-content: center;
   align-items: center;
   background-color: #000 !important;
-  scale: 150%;
-  border: none !important;
+  /* color: #faca22 !important; */
+  border-color: transparent transparent transparent transparent !important;
+  scale: 130%;
 }
 
 .fa-facebook {
+  /* color: #0765ff */
   color: #faca22 !important;
 }
 
 .fa-linkedin {
+  /* color: #0b65c2 !important; */
   color: #faca22 !important;
 }
 
 .fa-github {
+  /* color: white !important; */
   color: #faca22 !important;
 }
 
@@ -1408,7 +1410,7 @@ image {
   border: none;
   padding: 8px 24px;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 24px;
   color: #333;
   border-radius: 5px;
 }
@@ -1420,19 +1422,19 @@ image {
   background-size: cover; /* Makes the texture fill the button */
   background-position: center;
   background-repeat: no-repeat;
-  color: yellow;
+
   /* Concrete-like texture or "mortar" effect */
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2), 4px 4px 15px rgba(0, 0, 0, 0.3);
-  background-color: #000000;
+
   /* Border simulating mortar */
-  /* border: 2px solid #d0d0d0; */
+  border: 2px solid #d0d0d0;
 }
 
 .left-button:hover,
 .right-button:hover {
   /* background-image: url("/assets/brick.jpg"); Optionally change texture on hover */
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3), 4px 4px 20px rgba(0, 0, 0, 0.4); /* Deepens the shadow on hover */
-  scale: 108%;
+  scale: 103%;
 }
 
 .right-button {
@@ -1446,10 +1448,8 @@ image {
   /* Concrete-like texture or "mortar" effect */
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2), 4px 4px 15px rgba(0, 0, 0, 0.3);
 
-  background-color: #000000;
-
   /* Border simulating mortar */
-  /* border: 2px solid #d0d0d0; */
+  border: 2px solid #d0d0d0;
 }
 
 .building {
@@ -1541,9 +1541,6 @@ image {
   .image-gallery {
     display: none;
   }
-}
-.logo-text span {
-  margin-left: 50px !important;
 }
 
 @media (max-width: 768px) {
@@ -1684,9 +1681,6 @@ image {
     #testimonial {
       padding-bottom: 10px;
     }
-    .logo-text span {
-      margin: 0 auto !important;
-    }
 }
 
 .about-left img {
@@ -1719,10 +1713,30 @@ image {
   overflow: hidden; /* Disable scrolling */
 }
 
-/* 
-.logo-text {
-  display: inline-flex;
 
+a.btn-cv {
+  /* text-align: center; */
+  display: flex;
   align-items: center;
-  justify-content: center; 
-} */
+  justify-content: center;
+}
+
+a.btn-cv:hover {
+  color: black;
+  background-color: #faca22 !important;
+}
+
+button.nav-button {
+  background: none !important;
+  border: none !important;
+  background-color: none !important;
+  scale: 120%;
+}
+
+.lone:last-child {
+  margin-bottom: 10px;
+}
+
+i.fa-home {
+  margin-left: 60px;
+}
