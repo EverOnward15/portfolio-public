@@ -1,1 +1,1 @@
-Hosted: https://everonward15.github.io/Portfolio/
+Hosted: https://everonward15.github.io/portfolio-public/
